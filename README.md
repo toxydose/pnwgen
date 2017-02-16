@@ -32,8 +32,7 @@ Launching:
 -put your custom prefixes in the file "prefix.txt"
 
 -type:
-
-   -python3 pnwgen.py
+    python3 pnwgen.py
 
 
 output wordlist.txt size:
