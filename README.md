@@ -1,6 +1,6 @@
 # Phonenumber Wordlist Generator v.0.1
 
-A wery flexible phonenumber wordlist generator based on python
+A wery flexible phonenumber wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers setted as passwords.
 Sometimes you need to get a phone-numbers based wordlist for choosen region, but you have very slow internet connection.
 
