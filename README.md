@@ -5,7 +5,7 @@ Obviously, more than 30% users have their mobile phone numbers setted as passwor
 Sometimes you need to get a phone-numbers based wordlist for choosen region, but you have a very slow internet connection.
 
 This is a simple but flexible python script that allows you to operatively generate needed wordlist depending on your current situation.
-For example, the new mobile network code appears in your country, you have not wait when a new wordlist appears, you can generate the the new sequence with the new code in a new file, and attach this file to your old wordlist using CLI.
+For example, the new mobile network code appears in your country, you have not wait when a new wordlist appears, you can generate the new sequence with the new code in a new file, and attach this file to your old wordlist using CLI.
 
 Usage:
 
