@@ -13,15 +13,15 @@ Usage:
 
 -allows to add any prefixes (e.g CC, NDC)
 
-   -you have to set prefixes manually, just write them to the file "prefix.txt"
+-you have to set prefixes manually, just write them to the file "prefix.txt"
     
-    -each prefix should be written in a new line
+-each prefix should be written in a new line
     
-    -you can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c)
+-you can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c)
                               
-    -if you dont want to use any prefixes, just leave the prefix.txt empty
+-if you dont want to use any prefixes, just leave the prefix.txt empty
     
-    -if you want to generate just one sequence without any prefix, one of the lines in prefix.txt should be empty.	
+-if you want to generate just one sequence without any prefix, one of the lines in prefix.txt should be empty.	
 
 Launching:
 
@@ -33,7 +33,7 @@ Launching:
 
 -type:
 
-python3 pnwgen.py
+   python3 pnwgen.py
 
 
 output wordlist.txt size:
