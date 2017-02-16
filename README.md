@@ -24,7 +24,7 @@ Launching:
 -type:
 python3 pnwgen.py
 
-outout wordlist.txt size:
+output wordlist.txt size:
 --without prefixes ~ 80 Mb
 --with two 3-digits prefixes ~ 300Mb
 
