@@ -33,7 +33,7 @@ Launching:
 
 -type:
 
-   python3 pnwgen.py
+   -python3 pnwgen.py
 
 
 output wordlist.txt size:
