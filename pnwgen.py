@@ -1,13 +1,18 @@
-#phone number wordlist generator version 0.1.1
+#phone number wordlist generator version 0.1.2
 #https://github.com/toxydose
+from __future__ import print_function
 import sys
+
+#if hasattr(__builtins__, 'raw_input'):
+#    input=raw_input
+
 z = len(open('prefix.txt', "r").readlines())
 z=z-1
 print(z, ' prefixes was found')
 print("Creating a wordlist file...")
 sys.stdout = open('wordlist.txt', 'w')
 l=['','',0]
-text_file = open("prefix.txt", "r", encoding='utf-8')
+text_file = open("prefix.txt", "r")
 l[0] = text_file.readline().replace('\n', '')
 l[0] = text_file.readline().replace('\n', '')
 
