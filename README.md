@@ -32,9 +32,10 @@ Launching:
 -put your custom prefixes in the file "prefix.txt"
 
 -type:
+    
     python3 pnwgen.py
     
-    or
+    or 
     
     python pnwgen.py
 
