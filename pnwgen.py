@@ -16,7 +16,7 @@ text_file = open("prefix.txt", "r")
 l[0] = text_file.readline().replace('\n', '')
 l[0] = text_file.readline().replace('\n', '')
 
-while z >= 0:
+while z > 0:
 	
 	for i in range(9999999):
 		l[2]+=1
