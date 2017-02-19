@@ -1,4 +1,4 @@
-# Phone number Wordlist Generator v.0.1.3
+# Phone number Wordlist Generator v.0.2.0
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
@@ -9,19 +9,26 @@ For example, the new mobile network code appears in your country, you do not hav
 
 Usage:
 
--Generates SNs (subscriber numbers) from 0000000 to 9999999 
+-Generates SNs (subscriber numbers) from 4 to 10 digits as raw output:
 
--allows to add any prefixes (e.g CC, NDC)
+    4 digits: from 0000 to 9999 
+    5 digits: from 00009 to 99999
+    ...
+    10 digits: from 0000000000 to 9999999999
 
--you have to set prefixes manually, just write them to the file "prefix.txt"
+-Standart raw output is 7 digits
+
+-Allows to add any prefixes (e.g CC, NDC)
+
+-You have to set prefixes manually, just write them to the file "prefix.txt"
     
--each prefix should be written in a new line
+-Each prefix should be written in a new line
     
--you can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c)
+-You can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c)
                               
--if you dont want to use any prefixes, just leave the prefix.txt empty
+-If you dont want to use any prefixes, just leave the prefix.txt empty
     
--if you want to generate just one sequence without any prefix, one of the lines in prefix.txt should be empty.	
+-If you want to generate just one sequence without any prefix, the next line after comment in "prefix.txt" should be empty.	
 
 Launching:
 
@@ -40,7 +47,7 @@ Launching:
     python pnwgen.py
 
 
-output wordlist.txt size:
+output wordlist.txt size with standart 7-digits raw output:
 
 --without prefixes ~ 80 Mb
 
@@ -48,3 +55,8 @@ output wordlist.txt size:
 
 
 Performance: depends on your PC
+
+What`s new in 0.2.0:
+
+-now you can specify the digits number in the raw output from 4 to 10
+-several bugs fixed
