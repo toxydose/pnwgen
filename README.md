@@ -37,7 +37,7 @@ Usage:
     [...]
     0939999999
     
-It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feauture differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists.
+It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feauture differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists".
 
    
 -If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.	
