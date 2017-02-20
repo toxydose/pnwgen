@@ -24,7 +24,16 @@ Usage:
     
 -Each prefix should be written in a new line
     
--You can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c)
+-You can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c). For example, if you chosed two prefixes 063 and 093 and the standart raw 7 digits output, the general output in the file "wordlist.txt" will be the next:
+
+    0630000000
+    0630000001
+    ....
+    0639999999
+    0930000000
+    0930000001
+    ....
+    0930000002
                               
 -If you dont want to use any prefixes, just leave the prefix.txt empty
     
@@ -56,7 +65,10 @@ output wordlist.txt size with standart 7-digits raw output:
 
 Performance: depends on your PC
 
-What`s new in 0.2.0:
-
+Whats new in 0.2.0:
 -now you can specify the digits number in the raw output from 4 to 10
 -several bugs fixed
+
+DISCLAIMER:
+
+Usage of this program allows only within the law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
