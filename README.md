@@ -32,8 +32,10 @@ Usage:
     0639999999
     0930000000
     0930000001
-    ....
     0930000002
+    ....
+    0939999999
+    
                               
 -If you dont want to use any prefixes, just leave the prefix.txt empty
     
