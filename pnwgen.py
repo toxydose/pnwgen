@@ -1,7 +1,8 @@
-#phone number wordlist generator version 0.2.0
+#phone number wordlist generator version 0.2.1
 #https://github.com/toxydose
 from __future__ import print_function
 import sys
+import logging
 
 if hasattr(__builtins__, 'raw_input'):
     input=raw_input
@@ -82,8 +83,9 @@ def digits4():
 	verbose()
 	l[0] = text_file.readline().replace('\n', '')
 	l[0] = text_file.readline().replace('\n', '')
-	sys.stdout = open('wordlist.txt', 'w')	
+	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'0000')
 		for i in range(9999):
 			l[2]+=1
@@ -114,6 +116,7 @@ def digits5():
 	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'00000')
 		for i in range(99999):
 			l[2]+=1
@@ -146,6 +149,7 @@ def digits6():
 	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'000000')
 		for i in range(999999):
 			l[2]+=1
@@ -180,6 +184,7 @@ def digits8():
 	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'00000000')
 		for i in range(99999999):
 			l[2]+=1
@@ -218,6 +223,7 @@ def digits9():
 	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'000000000')
 		for i in range(999999999):
 			l[2]+=1
@@ -258,6 +264,7 @@ def digits10():
 	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
+		logging.info('generating '+l[0]+"*...")
 		print(l[0]+'0000000000')
 		for i in range(9999999999):
 			l[2]+=1
@@ -289,4 +296,7 @@ def digits10():
 		z = z-1
 	text_file.close()
 
+logging.basicConfig(level=logging.INFO)
+
 main()
+logging.info('Finished!!!')
