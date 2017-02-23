@@ -71,7 +71,8 @@ Performance: depends on your PC
 Whats new in 0.2.0:
 -now you can specify the digits number in the raw output from 4 to 10
 -several bugs fixed
-
+0.2.1:
+some verbosity added
 DISCLAIMER:
 
-Usage of this program allows only within the law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+Usage of this program is only allowed within boundaries of law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
