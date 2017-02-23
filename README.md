@@ -73,6 +73,7 @@ Whats new in 0.2.0:
 -several bugs fixed
 0.2.1:
 some verbosity added
+
 DISCLAIMER:
 
 Usage of this program is only allowed within boundaries of law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
