@@ -69,9 +69,14 @@ output wordlist.txt size with standart 7-digits raw output:
 Performance: depends on your PC
 
 Whats new in 0.2.0:
+
 -now you can specify the digits number in the raw output from 4 to 10
+
 -several bugs fixed
+
+
 0.2.1:
+
 some verbosity added
 
 DISCLAIMER:
