@@ -7,6 +7,9 @@ import logging
 if hasattr(__builtins__, 'raw_input'):
     input=raw_input
 
+
+logging.basicConfig(level=logging.INFO)
+
 def main():
 	global d
 	d = input('\nPlease, choose the digits quantity of generated raw output:\n(min 4, max 10, 7 by default - just press ENTER)\n\n>>> ')
@@ -30,26 +33,17 @@ def main():
 		main()
 	
 def verbose():
-	print('\n',d, ' digits raw output was choosed\n')
-	if z == 1:
-		print('',z, ' prefix was found...\n')
-	else:
-		print('',z, ' prefixes was found...\n')	
-	print("Creating a wordlist file...\n")
+	logging.info(d + ' digits raw output was choosed\n')
+	logging.info('generating '+l[0]+"..."+l[3])
 
 def digits():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
 	global l
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
-		print(l[0]+'0000000')
+	while z > 1:
+		print(l[0]+'0000000'+l[3])
 		for i in range(9999999):
 			l[2]+=1
 			if l[2]<10:
@@ -77,16 +71,10 @@ def digits():
 def digits4():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
-	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'0000')
+	while z > 1:
+		verbose()		
+		print(l[0]+'0000'+l[3])
 		for i in range(9999):
 			l[2]+=1
 			if l[2]<10:
@@ -108,16 +96,10 @@ def digits4():
 def digits5():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'00000')
+		print(l[0]+'00000'+l[3])
 		for i in range(99999):
 			l[2]+=1
 			if l[2]<10:
@@ -141,16 +123,10 @@ def digits5():
 def digits6():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'000000')
+		print(l[0]+'000000'+l[3])
 		for i in range(999999):
 			l[2]+=1
 			if l[2]<10:
@@ -176,16 +152,10 @@ def digits6():
 def digits8():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'00000000')
+		print(l[0]+'00000000'+l[3])
 		for i in range(99999999):
 			l[2]+=1
 			if l[2]<10:
@@ -215,16 +185,10 @@ def digits8():
 def digits9():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'000000000')
+		print(l[0]+'000000000'+l[3])
 		for i in range(999999999):
 			l[2]+=1
 			if l[2]<10:
@@ -256,16 +220,10 @@ def digits9():
 def digits10():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	z=z-1
-	l=['','',0]
-	text_file = open("prefix.txt", "r")
 	verbose()
-	l[0] = text_file.readline().replace('\n', '')
-	l[0] = text_file.readline().replace('\n', '')
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 0:
-		logging.info('generating '+l[0]+"*...")
-		print(l[0]+'0000000000')
+		print(l[0]+'0000000000'+l[3])
 		for i in range(9999999999):
 			l[2]+=1
 			if l[2]<10:
@@ -298,5 +256,31 @@ def digits10():
 
 logging.basicConfig(level=logging.INFO)
 
-main()
-logging.info('Finished!!!')
+l=['','',0,'']
+
+if len(sys.argv) == 2:
+	l[3] = sys.argv[1]
+if len(sys.argv) == 3:
+	l[0] = sys.argv[1]
+	l[3] = sys.argv[2]
+	d = '7'
+	try:
+		digits()
+		logging.info('Finished!!!')
+		exit()
+	except KeyboardInterrupt:
+		logging.info('Bye!')	
+		exit()
+	exit()
+
+text_file = open("prefix.txt", "r")
+l[0] = text_file.readline().replace('\n', '')
+l[0] = text_file.readline().replace('\n', '')
+try:
+	logging.info('--------------------------------')
+	logging.info("Creating a wordlist file...")
+	main()
+	logging.info('Finished!!!')
+
+except KeyboardInterrupt:
+	print('\nBye!')
