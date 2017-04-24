@@ -64,7 +64,7 @@ Launching:
 
 Quick launch:
 
-    python3 pnwgen.py [prefix] [soufix]
+    python3 pnwgen.py [prefix] [sufix]
     
 output wordlist.txt size with standart 7-digits raw output:
 
