@@ -40,7 +40,11 @@ Usage:
 It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feauture differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists".
 
    
--If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.	
+-If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.
+
+-Allows to add a souffix. Just put your suffix in the argument when script is launching.
+    
+    python3 pnwgen.py [soufix]
 
 Launching:
 
@@ -58,7 +62,10 @@ Launching:
     
     python pnwgen.py
 
+Quick launch:
 
+    python3 pnwgen.py [prefix] [soufix]
+    
 output wordlist.txt size with standart 7-digits raw output:
 
 --without prefixes ~ 80 Mb
@@ -78,6 +85,13 @@ Whats new in 0.2.0:
 0.2.1:
 
 some verbosity added
+
+0.2.2:
+
+-suffixes added
+
+-quick launch added
+
 
 DISCLAIMER:
 
