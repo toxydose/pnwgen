@@ -1,4 +1,4 @@
-# Phone number Wordlist Generator v.0.2.1
+# Phone number Wordlist Generator v.0.2.3
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
@@ -64,7 +64,10 @@ Launching:
 
 Quick launch:
 
-    python3 pnwgen.py [prefix] [sufix]
+    python3 pnwgen.py [prefix] [suffix] [length]
+
+Note: the length you should specify is the length of generated sequence benween the prefix and the suffix, but not the length of the entire numbers that should appear in your wordlist
+
     
 output wordlist.txt size with standart 7-digits raw output:
 
