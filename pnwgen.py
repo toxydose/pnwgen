@@ -1,12 +1,12 @@
-#phone number wordlist generator version 0.2.1
+#phone number wordlist generator version 0.2.3
 #https://github.com/toxydose
+
 from __future__ import print_function
 import sys
 import logging
 
 if hasattr(__builtins__, 'raw_input'):
     input=raw_input
-
 
 logging.basicConfig(level=logging.INFO)
 
@@ -98,7 +98,7 @@ def digits5():
 	z = len(open('prefix.txt', "r").readlines())
 	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
+	while z > 1:
 		print(l[0]+'00000'+l[3])
 		for i in range(99999):
 			l[2]+=1
@@ -125,7 +125,7 @@ def digits6():
 	z = len(open('prefix.txt', "r").readlines())
 	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
+	while z > 1:
 		print(l[0]+'000000'+l[3])
 		for i in range(999999):
 			l[2]+=1
@@ -154,7 +154,7 @@ def digits8():
 	z = len(open('prefix.txt', "r").readlines())
 	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
+	while z > 1:
 		print(l[0]+'00000000'+l[3])
 		for i in range(99999999):
 			l[2]+=1
@@ -187,7 +187,7 @@ def digits9():
 	z = len(open('prefix.txt', "r").readlines())
 	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
+	while z > 1:
 		print(l[0]+'000000000'+l[3])
 		for i in range(999999999):
 			l[2]+=1
@@ -222,7 +222,7 @@ def digits10():
 	z = len(open('prefix.txt', "r").readlines())
 	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
-	while z > 0:
+	while z > 1:
 		print(l[0]+'0000000000'+l[3])
 		for i in range(9999999999):
 			l[2]+=1
@@ -258,24 +258,104 @@ logging.basicConfig(level=logging.INFO)
 
 l=['','',0,'']
 
-if len(sys.argv) == 2:
-	l[3] = sys.argv[1]
-if len(sys.argv) == 3:
-	l[0] = sys.argv[1]
-	l[3] = sys.argv[2]
-	d = '7'
-	try:
-		digits()
-		logging.info('Finished!!!')
-		exit()
-	except KeyboardInterrupt:
-		logging.info('Bye!')	
-		exit()
-	exit()
-
 text_file = open("prefix.txt", "r")
 l[0] = text_file.readline().replace('\n', '')
 l[0] = text_file.readline().replace('\n', '')
+
+if len(sys.argv) == 2:
+	l[3] = sys.argv[1]
+
+#-------------quick launch------------------------
+elif len(sys.argv) == 4:
+	l[0] = sys.argv[1]
+	l[3] = sys.argv[2]
+	lenght = sys.argv[3]	
+	d = lenght
+	print (lenght)
+	if lenght == '4':
+		try:
+			digits4()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '5':
+		try:
+			digits5()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '6':
+		try:
+			digits6()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '7':
+		try:
+			digits()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '8':
+		try:
+			digits8()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '9':
+		try:
+			digits9()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	elif lenght == '10':
+		try:
+			digits10()
+			logging.info('Finished!!!')
+			exit()
+		except KeyboardInterrupt:
+			logging.info('Bye!')	
+			exit()
+		exit()
+	else:
+		print('the lenght should be from 4 to 10')
+		exit()
+#-------------------------------------------------	
+
+elif len(sys.argv)==1:
+	pass
+else:
+	print(
+
+'''incorrect arguments!
+The input should be:
+pnwgen.py 
+or:
+pnwgen.py [suffix]
+or:
+pnwgen.py [prefix] [suffix] [generating lenght]
+''')
+
+	exit()
+
 try:
 	logging.info('--------------------------------')
 	logging.info("Creating a wordlist file...")
