@@ -1,4 +1,4 @@
-#phone number wordlist generator version 0.2.3
+#phone number wordlist generator version 0.2.4
 #https://github.com/toxydose
 
 from __future__ import print_function
@@ -40,9 +40,9 @@ def digits():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
 	global l
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()
 		print(l[0]+'0000000'+l[3])
 		for i in range(9999999):
 			l[2]+=1
@@ -96,9 +96,9 @@ def digits4():
 def digits5():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()
 		print(l[0]+'00000'+l[3])
 		for i in range(99999):
 			l[2]+=1
@@ -123,9 +123,9 @@ def digits5():
 def digits6():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()		
 		print(l[0]+'000000'+l[3])
 		for i in range(999999):
 			l[2]+=1
@@ -152,9 +152,9 @@ def digits6():
 def digits8():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()
 		print(l[0]+'00000000'+l[3])
 		for i in range(99999999):
 			l[2]+=1
@@ -185,9 +185,9 @@ def digits8():
 def digits9():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()
 		print(l[0]+'000000000'+l[3])
 		for i in range(999999999):
 			l[2]+=1
@@ -220,9 +220,9 @@ def digits9():
 def digits10():
 	global z
 	z = len(open('prefix.txt', "r").readlines())
-	verbose()
 	sys.stdout = open('wordlist.txt', 'w')
 	while z > 1:
+		verbose()
 		print(l[0]+'0000000000'+l[3])
 		for i in range(9999999999):
 			l[2]+=1
