@@ -1,4 +1,4 @@
-#phone number wordlist generator version 0.2.4
+#phone number wordlist generator version 0.2.5
 #https://github.com/toxydose
 
 from __future__ import print_function
@@ -8,11 +8,13 @@ import logging
 if hasattr(__builtins__, 'raw_input'):
     input=raw_input
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(format = "%(levelname)s:%(message)s", level=logging.INFO)
 
 def main():
 	global d
 	d = input('\nPlease, choose the digits quantity of generated raw output:\n(min 4, max 10, 7 by default - just press ENTER)\n\n>>> ')
+	logging.info(d + ' digits raw output was choosed\n')
+
 	if d == '' or d == '7':
 		d = '7'	
 		digits()
@@ -33,7 +35,6 @@ def main():
 		main()
 	
 def verbose():
-	logging.info(d + ' digits raw output was choosed\n')
 	logging.info('generating '+l[0]+"..."+l[3])
 
 def digits():
@@ -254,7 +255,7 @@ def digits10():
 		z = z-1
 	text_file.close()
 
-logging.basicConfig(level=logging.INFO)
+#logging.basicConfig(level=logging.INFO)
 
 l=['','',0,'']
 
