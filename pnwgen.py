@@ -1,15 +1,22 @@
-# phone number wordlist generator version 0.2.6
+#!/usr/bin/env python3
+
+# phone number wordlist generator version 0.2.7
 # https://github.com/toxydose
+# https://awake.pro/
 
 from __future__ import print_function
 import sys
 import logging
+from doc import *
 
-if hasattr(__builtins__, 'raw_input'):
-    input = raw_input
+if '-v' in sys.argv:
+    print('Phone number Wordlist Generator v.' + VERSION)
+    exit()
+elif '-h' in sys.argv:
+    print(HELP)
+    exit()
 
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
-
 
 def main():
     global digits_number
@@ -20,25 +27,25 @@ def main():
     if digits_number == '' or digits_number == '7':
         digits_number = '7'
         digits()
-    if digits_number == '4':
+    elif digits_number == '4':
         digits4()
-    if digits_number == '5':
+    elif digits_number == '5':
         digits5()
-    if digits_number == '6':
+    elif digits_number == '6':
         digits6()
-    if digits_number == '8':
+    elif digits_number == '8':
         digits8()
-    if digits_number == '9':
+    elif digits_number == '9':
         digits9()
-    if digits_number == '10':
+    elif digits_number == '10':
         digits10()
-    if digits_number != '4' and digits_number != '5' and digits_number != '6' and digits_number != '7' and digits_number != '8' and digits_number != '9' and digits_number != '10' and digits_number != '':
+    else:
         print('Error: number of digits must be set between 4 and 10\n.............................')
         main()
 
 
 def verbose():
-    logging.info('generating ' + gen_form[0] + "..." + gen_form[3])
+    logging.info('generating ' + gen_form[0] + "***" + gen_form[3])
 
 
 def digits():
@@ -364,6 +371,8 @@ or:
 pnwgen.py [suffix]
 or:
 pnwgen.py [prefix] [suffix] [generating lenght]
+
+Please use -h for help
 ''')
 
     exit()

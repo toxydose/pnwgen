@@ -1,4 +1,4 @@
-# Phone number Wordlist Generator v.0.2.6
+# Phone number Wordlist Generator v.0.2.7
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
@@ -7,7 +7,10 @@ Sometimes you need to get a phone-numbers based wordlist for choosen region, but
 This is a simple but flexible python script that allows you to operatively generate needed wordlist depending on your current situation.
 For example, the new mobile network code appears in your country, you do not have to wait when a new wordlist appears, you can generate the new sequence with the new code in a new file, and append this file to your old wordlist using CLI.
 
-Usage:
+##### Requirements:
+ Python3*
+
+##### Usage:
 
 -Generates SNs (subscriber numbers) from 4 to 10 digits as raw output:
 
@@ -16,7 +19,7 @@ Usage:
     ...
     10 digits: from 0000000000 to 9999999999
 
--Standart raw output is 7 digits
+-Standard raw output is 7 digits
 
 -Allows to add any prefixes (e.g CC, NDC)
 
@@ -42,9 +45,9 @@ It means that the custom prefixes will be switched automatically, and all of gen
    
 -If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.
 
--Allows to add a souffix. Just put your suffix in the argument when script is launching.
+-Allows to add permanent suffix. Just put your suffix in the argument when script is launching.
     
-    python3 pnwgen.py [soufix]
+    python3 pnwgen.py [suffix]
 
 Launching:
 
@@ -57,10 +60,6 @@ Launching:
 -type:
     
     python3 pnwgen.py
-    
-    or 
-    
-    python pnwgen.py
 
 Quick launch:
 
@@ -76,26 +75,11 @@ output wordlist.txt size with standart 7-digits raw output:
 --with two 3-digits prefixes ~ 300Mb
 
 
-Performance: depends on your PC
+##### Performance:
+Depends on your PC
 
-Whats new in 0.2.0:
-
--now you can specify the digits number in the raw output from 4 to 10
-
--several bugs fixed
-
-
-0.2.1:
-
-some verbosity added
-
-0.2.2:
-
--suffixes added
-
--quick launch added
-
-
-DISCLAIMER:
+##### DISCLAIMER:
 
 Usage of this program is only allowed within boundaries of law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+
+https://awake.pro/
