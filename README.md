@@ -68,7 +68,7 @@ Quick launch:
 Note: the length you should specify is the length of generated sequence benween the prefix and the suffix, but not the length of the entire numbers that should appear in your wordlist
 
     
-output wordlist.txt size with standart 7-digits raw output:
+output wordlist.txt size with standard 7-digits raw output:
 
 --without prefixes ~ 80 Mb
 
