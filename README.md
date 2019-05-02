@@ -3,7 +3,7 @@
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
-Sometimes you need to get a phone-numbers based wordlist for choosen region, but you have a very slow internet connection.
+Sometimes you need to get a phone-numbers based wordlist for chosen region, but you have a very slow internet connection.
 
 This is a simple but flexible python script that allows you to operatively generate needed wordlist depending on your current situation.
 For example, the new mobile network code appears in your country, you do not have to wait when a new wordlist appears, you can generate the new sequence with the new code in a new file, and append this file to your old wordlist using CLI.
@@ -66,7 +66,7 @@ Quick launch:
 
     python3 pnwgen.py [prefix] [suffix] [length]
 
-Note: the length you should specify is the length of generated sequence benween the prefix and the suffix, but not the length of the entire numbers that should appear in your wordlist
+Note: the length you should specify is the length of generated sequence between the prefix and the suffix, but not the length of the entire numbers that should appear in your wordlist
 
     
 output wordlist.txt size with standard 7-digits raw output:
