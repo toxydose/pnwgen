@@ -4,7 +4,6 @@
 # https://github.com/toxydose
 # https://awake.pro/
 
-from __future__ import print_function
 import sys
 import logging
 from doc import *
