@@ -28,7 +28,7 @@ For example, the new mobile network code appears in your country, you do not hav
     
 -Each prefix should be written in a new line
     
--You can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c). For example, if you chosed two prefixes 063 and 093 and the standart raw 7 digits output, the general output in the file "wordlist.txt" will be the next:
+-You can input the prefixes in any format (e.g 093, 8093, 8-093, +38(093) e.t.c). For example, if you chose two prefixes 063 and 093 and the standard raw 7 digits output, the general output in the file "wordlist.txt" will be the next:
 
     0630000000
     0630000001
@@ -41,7 +41,7 @@ For example, the new mobile network code appears in your country, you do not hav
     [...]
     0939999999
     
-It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feauture differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists".
+It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feature differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists".
 
    
 -If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.

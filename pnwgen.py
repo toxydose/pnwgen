@@ -17,10 +17,11 @@ elif '-h' in sys.argv:
 
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
+
 def main():
     global digits_number
     digits_number = input(
-        '\nPlease, choose the number of digits in generated raw output:\n(min 4, max 10, 7 by default - just press ENTER)\n\n>>> ')
+        '\nChoose the number of digits in generated raw output:\n(min 4, max 10, 7 (by default) - press ENTER)\n\n>>> ')
     logging.info(digits_number + ' digits raw output was choosed\n')
 
     if digits_number == '' or digits_number == '7':
@@ -369,7 +370,7 @@ pnwgen.py
 or:
 pnwgen.py [suffix]
 or:
-pnwgen.py [prefix] [suffix] [generating lenght]
+pnwgen.py [prefix] [suffix] [generating length]
 
 Please use -h for help
 ''')

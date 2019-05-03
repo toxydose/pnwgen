@@ -1,2 +1,2 @@
-#put your prefixes here. !!DONT DELETE THIS LINE!!
+#put your prefixes here. !!DON'T DELETE THIS LINE!!
 
