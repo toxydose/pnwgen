@@ -1,4 +1,4 @@
-# Phone number Wordlist Generator v.0.2.7
+# Phone number Wordlist Generator v.0.3
 [![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_plastic.svg)](https://inventory.rawsec.ml/)
 
 A very flexible phone number wordlist generator based on Python.
