@@ -1,4 +1,4 @@
-VERSION = '0.2.7'
+VERSION = '0.3'
 
 HELP = '''
 === phone number wordlist generator version 0.2.7 ===
