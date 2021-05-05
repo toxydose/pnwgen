@@ -49,36 +49,20 @@ def verbose():
 
 
 def digits():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    global gen_form
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '0000000' + gen_form[3])
-        for i in range(9999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '000000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '000'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 1000000 and gen_form[2] > 99999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 999999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
+    prefixes = []
+    with open('prefix.txt', 'r') as file_prefix:
+        for line in iter(file_prefix.readline, ''):
+            prefixes.append(line.rstrip('\n'))
+
+    n = 99999999+1
+    step = 10000
+    with open('wordlist.txt', 'w') as file_out:
+        for prefix in prefixes:
+            for i in range(n//step):
+                out_list = []
+                for j in range(step):
+                    out_list.append("{}{}\n".format(prefix, str(i*step+j).zfill(8)))
+                file_out.write("".join(out_list))
 
 
 def digits4():
