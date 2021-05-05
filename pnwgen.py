@@ -18,7 +18,7 @@ elif '-h' in sys.argv:
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
 
-def main():
+def main(suffix):
     global digits_number
     digits_number = input(
         '\nChoose the number of digits in generated raw output:\n(min 4, max 10, 7 (by default) - press ENTER)\n\n>>> ')
@@ -26,328 +26,68 @@ def main():
 
     if digits_number == '' or digits_number == '7':
         digits_number = '7'
-        digits()
+        digits(7, suffix=suffix)
     elif digits_number == '4':
-        digits4()
+        digits(4, suffix=suffix)
     elif digits_number == '5':
-        digits5()
+        digits(5, suffix=suffix)
     elif digits_number == '6':
-        digits6()
+        digits(6, suffix=suffix)
     elif digits_number == '8':
-        digits8()
+        digits(8, suffix=suffix)
     elif digits_number == '9':
-        digits9()
+        digits(9, suffix=suffix)
     elif digits_number == '10':
-        digits10()
+        digits(10, suffix=suffix)
     else:
         print('Error: number of digits must be set between 4 and 10\n.............................')
-        main()
+        main(suffix)
 
 
-def verbose():
-    logging.info('generating ' + gen_form[0] + "***" + gen_form[3])
+# def verbose():
+#     logging.info('generating ' + gen_form[0] + "***" + gen_form[3])
 
 
-def digits():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    global gen_form
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '0000000' + gen_form[3])
-        for i in range(9999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '000000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '000'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 1000000 and gen_form[2] > 99999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 999999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
+def digits(pow, prefix_from_file=True, prefix="", suffix=""):
+    prefixes = []
+    if prefix_from_file:
+        with open('prefix.txt', 'r') as file_prefix:
+            for line in iter(file_prefix.readline, ''):
+                prefixes.append(line.rstrip('\n'))
+    else:
+        prefixes.append(prefix)
+    if not prefixes:
+        prefixes.append("")
 
-
-def digits4():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '0000' + gen_form[3])
-        for i in range(9999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '00'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '0'
-            elif gen_form[2] > 999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
-
-
-def digits5():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '00000' + gen_form[3])
-        for i in range(99999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '00'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 9999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
-
-
-def digits6():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '000000' + gen_form[3])
-        for i in range(999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 99999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
-
-
-def digits8():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '00000000' + gen_form[3])
-        for i in range(99999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '0000000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '000000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '000'
-            elif gen_form[2] < 1000000 and gen_form[2] > 99999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 10000000 and gen_form[2] > 999999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 9999999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
-
-
-def digits9():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '000000000' + gen_form[3])
-        for i in range(999999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '00000000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '0000000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '000000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 1000000 and gen_form[2] > 99999:
-                gen_form[1] = '000'
-            elif gen_form[2] < 10000000 and gen_form[2] > 999999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 100000000 and gen_form[2] > 9999999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 99999999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
-
-
-def digits10():
-    global prefix_len
-    prefix_len = len(open('prefix.txt', "r").readlines())
-    sys.stdout = open('wordlist.txt', 'w')
-    while prefix_len > 1:
-        verbose()
-        print(gen_form[0] + '0000000000' + gen_form[3])
-        for i in range(9999999999):
-            gen_form[2] += 1
-            if gen_form[2] < 10:
-                gen_form[1] = '000000000'
-            elif gen_form[2] < 100 and gen_form[2] > 9:
-                gen_form[1] = '00000000'
-            elif gen_form[2] < 1000 and gen_form[2] > 99:
-                gen_form[1] = '0000000'
-            elif gen_form[2] < 10000 and gen_form[2] > 999:
-                gen_form[1] = '000000'
-            elif gen_form[2] < 100000 and gen_form[2] > 9999:
-                gen_form[1] = '00000'
-            elif gen_form[2] < 1000000 and gen_form[2] > 99999:
-                gen_form[1] = '0000'
-            elif gen_form[2] < 10000000 and gen_form[2] > 999999:
-                gen_form[1] = '000'
-            elif gen_form[2] < 100000000 and gen_form[2] > 9999999:
-                gen_form[1] = '00'
-            elif gen_form[2] < 1000000000 and gen_form[2] > 99999999:
-                gen_form[1] = '0'
-            elif gen_form[2] > 999999999:
-                gen_form[1] = ''
-            for items in gen_form:
-                print(items, end='')
-            print('')
-        gen_form[2] = 0
-        gen_form[0] = text_file.readline().replace('\n', '')
-        prefix_len = prefix_len - 1
-    text_file.close()
+    n = 10 ** pow
+    step = 10000
+    with open('wordlist.txt', 'w') as file_out:
+        for prefix in prefixes:
+            for i in range(n//step):
+                out_list = []
+                for j in range(step):
+                    out_list.append("{}{}{}\n".format(prefix, str(i*step+j).zfill(pow), suffix))
+                file_out.write("".join(out_list))
 
 
 # logging.basicConfig(level=logging.INFO)
 
-gen_form = ['', '', 0, '']
-
-text_file = open("prefix.txt", "r")
-gen_form[0] = text_file.readline().replace('\n', '')
-gen_form[0] = text_file.readline().replace('\n', '')
+prefix = ""
+suffix = ""
 
 if len(sys.argv) == 2:
-    gen_form[3] = sys.argv[1]
+    suffix = sys.argv[1]
 
 # -------------quick launch------------------------
 elif len(sys.argv) == 4:
-    gen_form[0] = sys.argv[1]
-    gen_form[3] = sys.argv[2]
+    prefix = sys.argv[1]
+    suffix = sys.argv[2]
     length = sys.argv[3]
-    digits_number = length
+    digits_number = int(length)
     print(length)
-    if length == '4':
+    if (digits_number >= 4) and (digits_number <= 10):
         try:
-            digits4()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '5':
-        try:
-            digits5()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '6':
-        try:
-            digits6()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '7':
-        try:
-            digits()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '8':
-        try:
-            digits8()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '9':
-        try:
-            digits9()
-            logging.info('Finished!!!')
-            exit()
-        except KeyboardInterrupt:
-            logging.info('Bye!')
-            exit()
-        exit()
-    elif length == '10':
-        try:
-            digits10()
+            digits(digits_number, prefix_from_file=False, prefix=prefix, suffix=suffix)
             logging.info('Finished!!!')
             exit()
         except KeyboardInterrupt:
@@ -380,7 +120,7 @@ Please use -h for help
 try:
     logging.info('--------------------------------')
     logging.info("Creating a wordlist file...")
-    main()
+    main(suffix)
     logging.info('Finished!!!')
 
 except KeyboardInterrupt:
