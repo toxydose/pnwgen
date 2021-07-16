@@ -8,6 +8,9 @@ Sometimes you need to get a phone-numbers based wordlist for chosen region, but 
 This is a simple but flexible python script that allows you to operatively generate needed wordlist depending on your current situation.
 For example, the new mobile network code appears in your country, you do not have to wait when a new wordlist appears, you can generate the new sequence with the new code in a new file, and append this file to your old wordlist using CLI.
 
+##### What is new in v.0.3?
+Optimized code, better performance on wordlist generation.
+
 ##### Requirements:
  Python3*
 
@@ -74,10 +77,6 @@ output wordlist.txt size with standard 7-digits raw output:
 --without prefixes ~ 80 Mb
 
 --with two 3-digits prefixes ~ 300Mb
-
-
-##### Performance:
-Depends on your PC
 
 ##### DISCLAIMER:
 
