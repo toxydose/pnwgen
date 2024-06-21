@@ -43,7 +43,7 @@ def main(suffix):
         logging.info(' ' + digits_number + ' digits raw output chosen\n')
     elif digits_number == '10':
         logging.info(' ' + digits_number + ' digits raw output chosen\n')
-        logging.info(' WARNING 10 digits output generation might take a lot of time and consume about 300 GB of disk space!')
+        logging.info(' WARNING 10 digits output generation might take a lot of time and consume about 111 GB of disk space!')
         digits(10, suffix=suffix)
     else:
         print('Error: number of digits must be set between 4 and 10\n.............................')
