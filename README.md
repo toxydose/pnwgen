@@ -1,5 +1,4 @@
 # Phone number Wordlist Generator v.0.3
-[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_plastic.svg)](https://inventory.rawsec.ml/)
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
@@ -46,6 +45,7 @@ Optimized code, better performance on wordlist generation.
     
 It means that the custom prefixes will be switched automatically, and all of generated output you will find in one wordlist file. This feature differs this script from most other generators, where you have to "set prefix => generate => wait => set prefix => generate => wait => merge two wordlists".
 
+-Prefixes submitted to the file should not start from '#' since it will be considered as a commend. If you need to add prefix starting from '#' please use command line argument.
    
 -If you want to generate the raw sequence without any prefix, the next line after comment in "prefix.txt" should be empty.
 
@@ -78,8 +78,8 @@ output wordlist.txt size with standard 7-digits raw output:
 
 --with two 3-digits prefixes ~ 300Mb
 
+###### WARNING: Wordlist generation for 10-digits output will take significant amount of time to be completed because it generates 10 billions of possible combinations. The wordlist size will be about 300 GB. Make sure you have enough disk space left or the sript will crash.
+
 ##### DISCLAIMER:
 
 Usage of this program is only allowed within boundaries of law. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
-
-https://awake.pro/

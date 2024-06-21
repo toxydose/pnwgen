@@ -1,9 +1,8 @@
-VERSION = '0.3'
+VERSION = '0.5'
 
 HELP = '''
-=== phone number wordlist generator version 0.2.7 ===
+=== phone number wordlist generator version 0.5 ===
 https://github.com/toxydose
-https://awake.pro/
 ------------------------------------------------------
 -Generates SNs (subscriber numbers) from 4 to 10 digits as raw output:
 

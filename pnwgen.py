@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-# phone number wordlist generator version 0.2.7
+# phone number wordlist generator version 0.5
 # https://github.com/toxydose
-# https://awake.pro/
 
 import sys
 import logging
@@ -22,22 +21,29 @@ def main(suffix):
     global digits_number
     digits_number = input(
         '\nChoose the number of digits in generated raw output:\n(min 4, max 10, 7 (by default) - press ENTER)\n\n>>> ')
-    logging.info(digits_number + ' digits raw output was choosed\n')
-
+    logging.info(' Generating worlist file...')
     if digits_number == '' or digits_number == '7':
+        logging.info(' 7 digits raw output chosen\n')
         digits_number = '7'
         digits(7, suffix=suffix)
     elif digits_number == '4':
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')    
         digits(4, suffix=suffix)
     elif digits_number == '5':
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')
         digits(5, suffix=suffix)
     elif digits_number == '6':
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')
         digits(6, suffix=suffix)
     elif digits_number == '8':
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')
         digits(8, suffix=suffix)
     elif digits_number == '9':
         digits(9, suffix=suffix)
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')
     elif digits_number == '10':
+        logging.info(' ' + digits_number + ' digits raw output chosen\n')
+        logging.info(' WARNING 10 digits output generation might take a lot of time and consume about 300 GB of disk space!')
         digits(10, suffix=suffix)
     else:
         print('Error: number of digits must be set between 4 and 10\n.............................')
@@ -53,7 +59,8 @@ def digits(pow, prefix_from_file=True, prefix="", suffix=""):
     if prefix_from_file:
         with open('prefix.txt', 'r') as file_prefix:
             for line in iter(file_prefix.readline, ''):
-                prefixes.append(line.rstrip('\n'))
+                if not line.lstrip().startswith('#'):
+                    prefixes.append(line.rstrip('\n'))
     else:
         prefixes.append(prefix)
     if not prefixes:
@@ -84,14 +91,15 @@ elif len(sys.argv) == 4:
     suffix = sys.argv[2]
     length = sys.argv[3]
     digits_number = int(length)
-    print(length)
     if (digits_number >= 4) and (digits_number <= 10):
         try:
             digits(digits_number, prefix_from_file=False, prefix=prefix, suffix=suffix)
-            logging.info('Finished!!!')
+            logging.info(' ' + str(digits_number) + ' digits raw output chosen\n')    
+            logging.info(' Generating worlist file...')
+            logging.info(' Finished!!!')
             exit()
         except KeyboardInterrupt:
-            logging.info('Bye!')
+            logging.info(' Bye!')
             exit()
         exit()
     else:
@@ -119,9 +127,9 @@ Please use -h for help
 
 try:
     logging.info('--------------------------------')
-    logging.info("Creating a wordlist file...")
+    print('Phone number Wordlist Generator v.' + VERSION)
     main(suffix)
-    logging.info('Finished!!!')
+    logging.info(' Finished!!!')
 
 except KeyboardInterrupt:
     print('\nBye!')
