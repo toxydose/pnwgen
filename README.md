@@ -80,7 +80,7 @@ output wordlist.txt size with standard 7-digits raw output:
 
 --with two 3-digits prefixes ~ 300Mb
 
-###### WARNING: Wordlist generation for 10-digits output will take significant amount of time to be completed because it generates 10 billions of possible combinations. The wordlist size will be about 300 GB. Make sure you have enough disk space left or the sript will crash.
+###### WARNING: Wordlist generation for 10-digits output will take significant amount of time to be completed because it generates 10 billions of possible combinations. The wordlist size will be about 111 GB. Make sure you have enough disk space left or the sript will crash.
 
 ##### DISCLAIMER:
 
