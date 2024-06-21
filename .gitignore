@@ -1,2 +1,4 @@
 .idea
 wordlist.txt
+__pycache__/
+*.pyc
