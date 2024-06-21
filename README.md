@@ -1,4 +1,4 @@
-# Phone number Wordlist Generator v.0.3
+# Phone number Wordlist Generator v.0.5
 
 A very flexible phone number wordlist generator based on Python.
 Obviously, more than 30% users have their mobile phone numbers set as passwords.
@@ -9,6 +9,8 @@ For example, the new mobile network code appears in your country, you do not hav
 
 ##### What is new in v.0.3?
 Optimized code, better performance on wordlist generation.
+##### What is new in v.0.5?
+Bug fixes, refactoring, interface improve.
 
 ##### Requirements:
  Python3*
